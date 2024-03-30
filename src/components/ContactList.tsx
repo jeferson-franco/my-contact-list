@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Contact } from '../types';
+import { Contact, createContact } from '../types';
 
 const ContactList: React.FC = () => {
   const [contacts, setContacts] = useState<Contact[]>([]);
 
   // Função para adicionar um novo contato
   const addContact = () => {
-    // Aqui você irá implementar a lógica para adicionar um novo contato à lista
+    const newContact = createContact('Novo Contato', '', '', '');
+    setContacts([...contacts, newContact]);
   };
 
   return (
